@@ -1,0 +1,36 @@
+u'Plot', u'An aging group of outlaws look for one last big score as the "traditional" American West is disappearing around them.')
+(u'Rated', u'R')
+(u'Title', u'The Wild Bunch')
+(u'Ratings', [{u'Source': u'Internet Movie Database', u'Value': u'8.0/10'},
+(u'Runtime', u'135 min')
+(u'Released', u'07 Aug 1969')
+
+writers:
+(u'Writer', u'Walon Green (screenplay), Sam Peckinpah (screenplay), Walon Green (story), Roy N. Sickner (story)')
+
+Production:
+(u'Production', u'Warner Bros. Pictures')
+
+Actors:
+(u'Actors', u"William Holden, Ernest Borgnine, Robert Ryan, Edmond O'Brien")
+
+
+(u'Type', u'movie')
+(u'Poster', u'https://ia.media-imdb.com/images/M/MV5BNGUyYTZmOWItMDJhMi00N2IxLWIyNDMtNjUxM2ZiYmU5YWU1XkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg')
+
+crew:
+(u'Director', u'Sam Peckinpah')
+
+released:
+
+Awards:
+(u'Awards', u'Nominated for 2 Oscars. Another 5 wins & 5 nominations.')
+(u'Genre', u'Action, Adventure, Western')
+
+Language:
+(u'Language', u'English, Spanish, German')
+
+Counrty:
+(u'Country', u'USA')
+
+
