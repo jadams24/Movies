@@ -1,9 +1,9 @@
-u'Plot', u'An aging group of outlaws look for one last big score as the "traditional" American West is disappearing around them.')
-(u'Rated', u'R')
 (u'Title', u'The Wild Bunch')
+(u'Plot', u'An aging group of outlaws look for one last big score as the "traditional" American West is disappearing around them.')
+(u'Released', u'07 Aug 1969')
+(u'Rated', u'R')
 (u'Ratings', [{u'Source': u'Internet Movie Database', u'Value': u'8.0/10'},
 (u'Runtime', u'135 min')
-(u'Released', u'07 Aug 1969')
 
 writers:
 (u'Writer', u'Walon Green (screenplay), Sam Peckinpah (screenplay), Walon Green (story), Roy N. Sickner (story)')
@@ -32,5 +32,26 @@ Language:
 
 Counrty:
 (u'Country', u'USA')
+
+
+-----------------------------------------------------------
+
+data fields to retrieve
+
+Film table
+
+Title, title
+Plot, plot
+Released, release_year
+Rated, rating
+Runtime, runtime
+
+
+person table
+
+Actors
+	spilt on ','
+	split on first name, first_name
+		 last name, last_name
 
 

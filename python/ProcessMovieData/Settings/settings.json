@@ -1,0 +1,14 @@
+{
+	"MovieFileLocation": "/media/movies",
+	"Omdb": 
+	{
+		"ApiKey": "6e689c60",
+		"UrlBase": "http://www.omdbapi.com/?t={}&apikey={}",
+		"MovieJsonFields": "Title, Year, Rated, Released, Runtime, Genre, Plot, Language, Country, Production",
+		"PersonJsonFields": "Director, Writer, Actors"		
+	},
+	"Database":
+	{
+		"ConnectionString": "connect"
+	}
+}

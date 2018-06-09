@@ -37,7 +37,10 @@ ehthumbs.db
 Thumbs.db
 
 # ignore .metadata folder
-python/workspace/.metadata/
+python/workspace/
+*.project
+*.pydevproject
+*.pyc
 
 # ignore certain files 
 mysql/*.bak
