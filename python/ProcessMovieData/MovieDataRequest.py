@@ -4,10 +4,8 @@ import os
 import requests
 from ConfigurationSettings import ConfigurationSettings
 
-def getMovieData( movieList ):
+def getMovieData( movieList, cfg ):
     
-    # set the cfg object
-    cfg = ConfigurationSettings()
 #    urlBase = 'http://www.omdbapi.com/?t='
 #    apiKey = '&apikey=6e689c60'
     # get base URL & API key from cfg object
@@ -19,10 +17,11 @@ def getMovieData( movieList ):
     movieJsonFields = cfg.getMovieJsonFields()    
     personJsonFields = cfg.getPersonJsonFields()
     
-    # initialize         
-    movieData = ()
+    # initialize dictionaries     
+    movieData = {}
+    personData = {}
     
-    for movie in movieList:
+    for movie in movieList.keys():
         movie = movie.replace("_", "+")
         movie = movie.replace(".mp4", "")
         urlApiCall = urlBase.format(movie, apiKey)
@@ -37,47 +36,54 @@ def getMovieData( movieList ):
             # This means something went wrong.
             # raise ApiError('GET /tasks/ {}'.format(resp.status_code))
             print('error: %s' % resp.status_code)
+            return
             
         t = json.loads(resp.content)
         keys = list(t.keys())
         for key in keys:
             if key in movieJsonFields:
                 # current key is part of the json field to store
-                # so add key and it's value to movieData tuple
-                current_data = (key, t[key])
-                movieData = movieData + current_data
+                # so add key and it's value to movieData dictionary
+                movieData[key] = t[key]
+            elif key in personJsonFields:
+                # add key and it's value to personData dictionary
+                personData[key] = t[key]
             
-
         print(movieData)
-#        for item in resp.json():
-#            print(item)
+        
+        # create movie object & store it in a list
+        
+        # create person object & store it in a list
 
 
-def fileRead():
+def fileRead( cfg ):
     print('fileRead')
     
-    dirlist = os.listdir("/home/melkor/Videos/movies")
-    for f in dirlist:
-        print(f)
-    
-    return dirlist
+    dirlist = {}
         
-def fileRead2():
-    
     # reads a directory and then prints out all 
     # files in that directory and all sub-directories.
-    start_path = '/home/melkor/' # current directory
+    start_path = cfg.getMovieLocation()
+#    start_path = '/home/melkor/Videos' # current directory
+
     for path, dirs, files in os.walk(start_path):
         for filename in files:
-            print os.path.join(path,filename)    
+            if filename.find(".mp4"):
+                print os.path.join(path,filename)
+                dirlist[filename] = os.path.join(path,filename)
+    
+    return dirlist
 
 def main():
     print "Hello World 2"
     
     print(os.getcwd())
+    
+        # set the cfg object
+    cfg = ConfigurationSettings()
        
-    movieList = fileRead()
-    getMovieData(movieList)
+    movieList = fileRead( cfg )
+    getMovieData( movieList, cfg )
 
 #    fileRead2()
 

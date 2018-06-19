@@ -5,10 +5,58 @@
 		"ApiKey": "6e689c60",
 		"UrlBase": "http://www.omdbapi.com/?t={}&apikey={}",
 		"MovieJsonFields": "Title, Year, Rated, Released, Runtime, Genre, Plot, Language, Country, Production",
-		"PersonJsonFields": "Director, Writer, Actors"		
+		"PersonJsonFields": "Director, Writer, Actors",
+		"DataFormats" :
+		{
+			"Writer":
+			{
+				"Seperator": ",",
+				"Format": "firstName lastName (role)"
+			}
+		}
 	},
 	"Database":
 	{
-		"ConnectionString": "connect"
+		"ConnectionString": "connect",
+		"DataMappings": 
+		{
+			"person": 
+			{
+				"firstName": "first_name",
+				"lastName" : "last_name"
+			},
+			"film" : 
+			{
+				"title": "title",
+				"plot": "plot",
+				"year": "release_year",
+				"runtime": "runtime",
+				"rated": "rating"
+			},
+			"film_personel": 
+			{
+				"filmId": "film_id",
+				"personId": "person_id",
+				"roleId": "role_id"
+			},
+			"film_genre": 
+			{
+				"filmId": "film_id",
+				"genreId": "genre_id"
+			},
+			"film_language": 
+			{
+				"filmId": "film_id",
+				"languageId": "language_id"
+			},
+			"genre": 
+			{
+				"genre": "genre_name"
+			},
+			"language": 
+			{
+				"language": "name"
+			}
+		}
 	}
 }

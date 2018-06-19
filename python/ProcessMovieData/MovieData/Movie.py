@@ -13,24 +13,22 @@ dataMappings = {
     'Runtime':'runtime'
 }
 
-jsonFields = [
-    'Title', 
-    'Plot', 
-    'Released', 
-    'Rated', 
-    'Runtime'
-]
-
-class Movie(object):
+class Movie( object ):
     '''
     This class holds the data associated with a movie
     '''
 
-    def __init__(self, params):
+    def __init__( self, data ):
         '''
         Constructor
         '''
         
-    def returnDataFields(self):
+        self.data = data
+        
+    def returnDataFields( self ):
         return dataMappings
+    
+    def storeData( self ):
+        return
+
         

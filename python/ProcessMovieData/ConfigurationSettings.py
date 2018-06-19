@@ -37,6 +37,13 @@ class ConfigurationSettings:
 	
 	def getPersonJsonFields( self ):
 		return self.data["Omdb"]["PersonJsonFields"]
+	
+	def getDataMapping( self, table ):
+		return self.data["Database"]["DataMappings"][table]
+	
+	def getDataTables( self ):
+		tables = self.data["Database"]["DataMappings"]
+		return tables.keys()
 
 #---------------------------------------------------
 # ConfigurationFileTestCase
