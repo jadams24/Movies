@@ -8,4 +8,4 @@ This project involves taking DVDs I own and converting them to *.mp4 format. The
 
 Ultimately a web site will reside on the same server as the MySql database and provide a media server so I can watch the movies straight from the server and not have to deal with the DVDs.
 
-The web site has not been started at this time (07/04/18).
+This is in the preliminary stages and is supposed to be used as a personal media server (07/04/18).
